@@ -6,12 +6,12 @@ import {
 } from "react-router-dom";
 
 import './index.css'
-import HomePage from './Pages/HomePage/index.tsx';
+import SensorPage from './Pages/SensorPage/index.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage/>
+    element: <SensorPage/>
   }
 ]);
 
