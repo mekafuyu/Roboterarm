@@ -7,12 +7,11 @@ import {
 
 import './index.css'
 import SensorPage from './Pages/SensorPage/index.tsx';
+import HomePage from './Pages/HomePage/index.tsx';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <SensorPage/>
-  }
+  { path: "/", element: <SensorPage/> },
+  { path: "/home", element: <HomePage/> }
 ]);
 
 createRoot(document.getElementById('root')!).render(
