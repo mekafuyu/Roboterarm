@@ -4,9 +4,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { ThemeProvider } from '@emotion/react';
 
 import './index.css'
-import SensorPage from './Pages/SensorPage/index.tsx';
+import theme from './theme';
+
+import SensorPage from './Pages/SensorPage/index';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>,
 )
