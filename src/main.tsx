@@ -10,7 +10,7 @@ import HomePage from './Pages/HomePage/index.tsx';
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <HomePage/>
   }
 ]);
