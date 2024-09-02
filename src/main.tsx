@@ -5,15 +5,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import App from './App.tsx'
 import './index.css'
 import HomePage from './Pages/HomePage/index.tsx';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App/>,
-  },
   {
     path: "/home",
     element: <HomePage/>
