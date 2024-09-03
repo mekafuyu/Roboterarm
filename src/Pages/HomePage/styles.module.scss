@@ -2,3 +2,12 @@
     align-items: center;
     justify-content: center;
 }
+
+.background {
+    position: absolute;
+    height: 920px;
+    transform: translate(-78%, -50%);
+    left: 1700px;
+    top: 500px;
+    z-index: -1;
+  }
