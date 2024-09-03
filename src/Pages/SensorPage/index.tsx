@@ -1,47 +1,55 @@
-// import styles from "./styles.module.scss";
-// import bg2 from "/bg2.svg";
+import styles from "./styles.module.scss";
+import bg2 from "/bg2.svg";
 // import arm from "/Robotic arm.png";
-import { Container } from "@mui/material";
-import Grid from '@mui/material/Grid2';
+import { Container, Paper } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import RAInput from "../../components/ra_input";
 
 export default function SensorPage() {
   return (
     <Container>
-        <Grid container columns={12} justifyContent={"space-between"}>
-            <RAInput size={4}/>
-            <RAInput size={4}/>
-            <RAInput size={4}/>
+      <Grid container justifyContent={"center"}>
+        <Grid container size={8}>
+          
         </Grid>
-
-            {/* <Stack direction="row" justifyContent={"space-between"}>
-                <RAInput></RAInput>
-            </Stack> */}
+        <Grid container size={8}>
+          <Grid
+            container
+            justifyContent={"space-between"}
+            size={{ xs: 6, md: 12 }}
+          >
+            <RAInput disabled label={"Pos. X"} size={{ xs: 12, md: 4 }} />
+            <RAInput disabled label={"Pos. Y"} size={{ xs: 12, md: 4 }} />
+            <RAInput disabled label={"Pos. Z"} size={{ xs: 12, md: 4 }} />
+          </Grid>
+          <Grid
+            container
+            justifyContent={"space-between"}
+            size={{ xs: 6, md: 12 }}
+          >
+            <RAInput disabled label={"Rot. X"} size={{ xs: 12, md: 4 }} />
+            <RAInput disabled label={"Rot. Y"} size={{ xs: 12, md: 4 }} />
+            <RAInput disabled label={"Rot. Z"} size={{ xs: 12, md: 4 }} />
+          </Grid>
+          <Grid
+            container
+            justifyContent={"space-between"}
+            size={{ xs: 6, md: 12 }}
+          >
+            <RAInput disabled label={"Muscle"} size={{ xs: 12, md: 4 }} />
+          </Grid>
+          <Grid size={12} padding={1}>
+            <Paper
+              elevation={4}
+              sx={{
+                height: "400px",
+                width: "100%",
+              }}
+            ></Paper>
+          </Grid>
+        </Grid>
+      </Grid>
+      <img src={bg2} className={styles.bgbars} alt="bg2" />
     </Container>
-    // <div>
-    //     <div className={styles.container}>
-    //         <div>
-    //             <div className={styles.inputs}>
-    //                 <RAInput id="1" label="Pos. X" placeholder="0"></RAInput>
-    //                 <RAInput id="2" label="Pos. Y" placeholder="0"></RAInput>
-    //                 <RAInput id="3" label="Pos. Z" placeholder="0"></RAInput>
-    //             </div>
-    //             <div className={styles.inputs}>
-    //                 <RAInput id="1" label="Rot. X" placeholder="0"></RAInput>
-    //                 <RAInput id="2" label="Rot. Y" placeholder="0"></RAInput>
-    //                 <RAInput id="3" label="Rot. Z" placeholder="0"></RAInput>
-    //             </div>
-    //             <div className={styles.inputs}>
-    //                 <RAInput id="1" label="Muscl" placeholder="0"></RAInput>
-    //             </div>
-    //         </div>
-    //         <div className={styles.inputs}>
-    //             <div className={styles.board}>
-    //                 <img src={arm} alt="" />
-    //             </div>
-    //         </div>
-    //     </div>
-    //     <img src={bg2} className={styles.bg} alt="bg2" />
-    // </div>
   );
 }
