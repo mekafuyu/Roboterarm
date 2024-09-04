@@ -1,28 +1,6 @@
-.bg {
-    position: fixed;
-    height: 2100px;
-    transform: translate(-78%, -50%);
-    z-index: -1;
-  }
-  
-  .container {
-    width: 100vw;
-  }
-  
-  .inputs {
-    width: 100vw;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .board {
-    background-color: white;
-    color: black;
-    width: 50vw;
-    height: 50vh;
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
+.bgbars {
+  position: fixed;
+  height: 2100px;
+  transform: translate(-80%, -50%);
+  z-index: -1;
+}
