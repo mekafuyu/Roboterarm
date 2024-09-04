@@ -1,0 +1,13 @@
+.position{
+    align-items: center;
+    justify-content: center;
+}
+
+.background {
+    position: absolute;
+    height: 920px;
+    transform: translate(-78%, -50%);
+    right: -50vw;
+    top: 500px;
+    z-index: -1;
+  }
