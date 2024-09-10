@@ -5,22 +5,29 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { ThemeProvider } from '@emotion/react';
+import { initializeApp } from 'firebase/app';
 
 import './index.css'
 import theme from './theme';
 
 import HomePage from './Pages/HomePage/index.tsx';
 import SensorPage from './Pages/SensorPage/index.tsx';
+import FirebaseContext from './context/FirebaseContext';
+import firebaseConfig from './firebaseConfig.ts';
 
 const router = createBrowserRouter([
   { path: "/", element: <SensorPage/> },
   { path: "/home", element: <HomePage/> }
 ]);
 
+
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <FirebaseContext.Provider value={initializeApp(firebaseConfig)}>
+          <RouterProvider router={router} />
+        </FirebaseContext.Provider>
+      </ThemeProvider>
   </StrictMode>,
 )

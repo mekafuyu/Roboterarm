@@ -4,8 +4,20 @@ import bg2 from "/bg2.svg";
 import { Container, Paper } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import RAInput from "../../components/ra_input";
+import { useContext } from "react";
+import FirebaseContext from "../../context/FirebaseContext";
+import { getDatabase, ref, set } from "firebase/database";
 
 export default function SensorPage() {
+  const fb = useContext(FirebaseContext); 
+  const db = getDatabase(fb);
+
+  function writeUserData(value: number) {
+    set(ref(db, 'values/'), {
+      value: value
+    });
+  }
+
   return (
     <Container>
       <Grid container justifyContent={"center"}>
@@ -47,6 +59,7 @@ export default function SensorPage() {
               }}
             ></Paper>
           </Grid>
+          <button onClick={() => writeUserData(1)}>UPPPP</button>
         </Grid>
       </Grid>
       <img src={bg2} className={styles.bgbars} alt="bg2" />
