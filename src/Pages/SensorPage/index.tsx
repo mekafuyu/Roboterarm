@@ -5,7 +5,7 @@ import { Container, Paper } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import RAInput from "../../components/ra_input";
 import { useContext } from "react";
-import FirebaseContext from "../../context/FirebaseContext";
+import FirebaseContext from "../../context/firebaseContext";
 import { getDatabase, ref, set } from "firebase/database";
 
 export default function SensorPage() {
