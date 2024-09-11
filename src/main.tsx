@@ -12,15 +12,13 @@ import theme from './theme';
 
 import HomePage from './Pages/HomePage/index.tsx';
 import SensorPage from './Pages/SensorPage/index.tsx';
-import FirebaseContext from './context/FirebaseContext';
+import FirebaseContext from './context/firebaseContext';
 import firebaseConfig from './firebaseConfig.ts';
 
 const router = createBrowserRouter([
   { path: "/", element: <SensorPage/> },
   { path: "/home", element: <HomePage/> }
 ]);
-
-
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
