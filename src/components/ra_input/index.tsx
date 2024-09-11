@@ -4,12 +4,14 @@ import Grid from "@mui/material/Grid2";
 export default function RAInput({
   id,
   disabled = false,
+  value,
   label = "Pos. X",
   placeholder,
   size = 12,
 }: {
   id?: string;
   disabled?: boolean;
+  value?: number | string,
   label?: string;
   placeholder?: string;
   size?: number | object;
@@ -48,6 +50,7 @@ export default function RAInput({
               borderRadius: 1
             }
           }}
+          value={value}
         />
       </Grid>
     </Grid>
