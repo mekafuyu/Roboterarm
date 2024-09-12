@@ -25,35 +25,40 @@ export default function SaveList() {
   };
 
   return (
-    <List sx={{ width: '100%', maxWidth: 400, bgcolor: 'background.paper'}}>
-      {[0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
+    <>
+      <List sx={{
+        width: '100%', maxWidth: 500, overflow: 'auto',
+        maxHeight: 640, bgcolor: 'background.paper'
+      }}>
+        {[0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11].map((value) => {
+          const labelId = `checkbox-list-label-${value}`;
 
-        return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            </ListItemButton>
-          </ListItem>
-        );
-      })}
-    </List>
+          return (
+            <ListItem
+              key={value}
+              secondaryAction={
+                <IconButton edge="end" aria-label="comments">
+                  <CommentIcon />
+                </IconButton>
+              }
+
+            >
+              <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
+                <ListItemIcon>
+                  <Checkbox
+                    edge="start"
+                    checked={checked.indexOf(value) !== -1}
+                    tabIndex={-1}
+                    disableRipple
+                    inputProps={{ 'aria-labelledby': labelId }}
+                  />
+                </ListItemIcon>
+                <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
+      </List>
+    </>
   );
 }

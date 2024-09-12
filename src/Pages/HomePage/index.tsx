@@ -5,19 +5,20 @@ import ButtonLarge from "../../components/buttonLarge/index.tsx";
 import Navbar from "../../components/navbar/index.tsx";
 import Stack from "@mui/material/Stack";
 import SaveList from "../../components/saveList/index.tsx";
-import Container from "@mui/material/Container";
 import { ThemeProvider } from '@mui/material/styles';
 import ligth from "../../components/themes/index.tsx";
 
 import background from "../../assets/Home/background.svg"
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
 
 export default function HomePage() {
     return (
             <ThemeProvider theme={ligth}>
             <Navbar />
-            <Container maxWidth="xl">
                 <Grid container>
-                    <Grid size={6}>
+                    <Grid size={{xs: 12, sm: 12, md: 12, lg: 6, xl:6 }}>
+                        <Typography variant="h1">Roboterarm</Typography>
                         <Stack
                             spacing={{ sm: 8 }}
                             direction="row"
@@ -26,31 +27,32 @@ export default function HomePage() {
                                 flexWrap: 'wrap',
                                 justifyContent: "center",
                                 alignItems: "center",
-                                marginTop: "10%",
+                                marginTop: "4%",
                             }}
                         >
-                            <ButtonLarge />
-                            <ButtonLarge />
-                            <ButtonLarge />
-                            <ButtonLarge />
+                            <ButtonLarge text="Criar Movimento"/>
+                            <ButtonLarge text="Sensor"/>
+                            <ButtonLarge text="Teste"/>
+                            <ButtonLarge text="Teste"/>
                         </Stack>
                     </Grid>
-                    <Grid size={6}>
+                    <Grid size={{xs: 12, sm: 12, md: 12, lg: 6, xl:6 }}>
                         <Grid
                             container
                             spacing={0}
                             direction="column"
                             alignItems="center"
                             justifyContent="center"
-                            sx={{ marginTop: "10%"}}
+                            sx={{ marginTop: "6%"}}
                         >
-                            <SaveList />
+                            <Paper sx={{width: "500px"}}>
+                                <Typography variant="h2">Movimentos Salvos</Typography>
+                                <SaveList/>
+                            </Paper>
                         </Grid>
                     </Grid>
                 </Grid>
-            </Container>
-
-            <img src={background} className={styles.background} alt="background"/>
+            {/* <img src={background} className={styles.background} alt="bg2" /> */}
             </ThemeProvider>
     );
 }
